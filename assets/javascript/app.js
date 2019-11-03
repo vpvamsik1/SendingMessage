@@ -14,7 +14,20 @@
             }
           }
   
-          const isValidEmail = emailField.checkValidity();
+          var element2 = $("#email");
+          for(var i = 0; i < element2.length; i++) {
+            element2[i].oninvalid = function(e) {
+              e.target.setCustomValidity("");
+              if(!e.target.validity.valid) {
+                e.target.setCustomValidity("Please enter a proper email address");
+              }
+            };
+            element2[i].oninput = function(e) {
+              e.target.setCustomValidity("");
+            }
+          }
+  
+     
   
           var element3 = $("#subject");
           for(var i = 0; i < element3.length; i++) {
@@ -44,7 +57,8 @@
   
   
           $("#B1").on("click", function(){
-            if((element1.val()) && (element3.val()) && (element4.val()) && isValidEmail) {
+          
+            if((element1.val()) && (element2.val()) && (element3.val()) && (element4.val()))  {
   
                   confirm("Are you sure you want to send this message?");
   
@@ -52,3 +66,4 @@
           });
   
           })
+  
