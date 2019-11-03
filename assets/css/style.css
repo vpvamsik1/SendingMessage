@@ -1,0 +1,23 @@
+nav{
+    margin-bottom: 2%;
+    background-color: blue;
+    color: white !important;
+}
+.navbar-brand{
+    color: white !important;
+}
+#button{
+    text-align: center;
+}
+.btn{
+    margin-top: 2%;
+    width: 50%;
+}
+
+@media (max-width: 575.98px) { 
+
+    .btn{
+        margin-top: 2%;
+        width: 95%;
+    }
+ }
